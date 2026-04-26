@@ -33,6 +33,7 @@ created in the last 30 days.
 ## Getting Started
 
 ```bash
+npm install
 npm run dev
 ```
 
