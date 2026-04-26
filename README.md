@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GitHub Trends Dashboard
+
+A Next.js dashboard that fetches public GitHub repository data, summarizes trends,
+and visualizes languages, categories, keywords, stars, and forks.
+
+## What It Answers
+
+The app answers: **What is trending right now on GitHub, and what can we learn from it?**
+
+For this project, "trending right now" means repositories created in the last
+30 days, sorted by star count. This keeps the sample focused on newer projects
+that are gaining attention quickly, instead of older repositories that have had
+years to collect stars.
+
+## Data Source
+
+The backend uses the public GitHub REST API search endpoint:
+
+- `/api/github` returns the processed raw repository sample.
+- `/api/insights` returns summarized insights for the dashboard.
+
+## Current Insight Snapshot
+
+From the current sample of 100 GitHub repositories, the strongest visible theme
+is **AI / Automation**. **Python** appears as the most common primary language,
+and **"claude"** is one of the most repeated keywords.
+
+This suggests that recent high-star GitHub activity is strongly influenced by
+AI tooling, automation, and developer workflows. The exact insight can change
+over time because the app fetches live GitHub data and focuses on repositories
+created in the last 30 days.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` starts the local development server.
+- `npm run build` creates a production build.
+- `npm run start` serves the production build.
+- `npm run lint` runs ESLint.
 
-## Learn More
+## Structure
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app/page.jsx` composes the dashboard.
+- `app/components/` contains reusable dashboard UI.
+- `app/api/` exposes local API routes for GitHub data and insights.
+- `lib/` contains GitHub fetching and trend analysis helpers.
