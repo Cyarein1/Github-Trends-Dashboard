@@ -6,7 +6,7 @@ export default function Loading() {
       <Container maxWidth="lg">
         <Stack spacing={2} sx={{ alignItems: "center", justifyContent: "center", minHeight: 360 }}>
           <CircularProgress />
-          <Typography color="text.secondary">
+          <Typography sx={{ color: "#111827", fontWeight: 700 }}>
             Loading the latest GitHub trend data...
           </Typography>
         </Stack>
