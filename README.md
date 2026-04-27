@@ -3,6 +3,8 @@
 A Next.js dashboard that fetches public GitHub repository data, summarizes trends,
 and visualizes languages, categories, keywords, stars, and forks.
 
+Live app: https://github-trends-dashboard.vercel.app/
+
 ## What It Answers
 
 The app answers: **What is trending right now on GitHub, and what can we learn from it?**
